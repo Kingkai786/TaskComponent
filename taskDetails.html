@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Task Details"> 
+
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter task subject" value={name} onchange={handleStartChange}></lightning-input>
+        </div>
+       <lightning-button variant="brand" label="Create" title="Primary action" onclick={createTask}  class="slds-m-left_x-small"></lightning-button>
+        <template if:true={templateVar}>  
+            <lightning-datatable
+                data={tasklist}
+                columns={columns}
+                onrowaction={handleRowAction}
+                key-field="Id"
+            ></lightning-datatable>
+        </template>  
+    </lightning-card>
+</template>
